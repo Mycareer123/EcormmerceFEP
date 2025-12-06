@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="GOAK">
+  <meta name="description" content="Fresh Rabbit and Organic Manure">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <header>
+    <h1>ASHANKO FARMS</h1>
+    <nav>
+      <ul>
+        <li><a href="products.html" alt="List of available goods">Order</a></li>
+        <!-- Cart Button -->
+      <a href="cart.html" class="cart-btn">
+        🛒 Cart (<span id="cart-count">0</span>)
+      </a>
+
+      </ul>
+    </nav>
+  </header> 
+
+  <section id="hero">
+    <div class="hero-div">
+      <video src="Ashgard Video.mp4" class="hero-video" autoplay muted loop oncontextmenu="return false;  "></video>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Our Farm</h2>
+    <p>Ashanko Farms have been running for years aiming to bring organic(natural) products to the general public. At our farm and garden services company, we are dedicated to bringing nature closer to your home. <br><br>We grow and supply fresh, healthy vegetables, beautiful flowers, and high-quality organic manure for all types of gardens. <br>Beyond providing these products, we also offer expert landscaping and garden maintenance services to help transform any space into a vibrant, well-designed, and thriving environment. <br><br>With years of hands-on experience, we take pride in delivering reliable, affordable, and eco-friendly solutions for homes, businesses, and community spaces. <br><br>Whether you need plants, soil nutrients, or complete garden work, we are committed to helping you create and maintain the green space you’ve always imagined.
+    </p>
+  </section>
+  <!--This is the search bar for products-->
+  <div id="searchBox">
+    <input type="text" id="searchInput" placeholder="Search products...">
+    <input type="number" id="priceInput" placeholder="Max Price (GH₵)" min="0">
+
+    <select id="categorySelect">
+      <option value="">All Categories</option>
+      <option value="vegetables">Vegetables</option>
+      <option value="flowers">Flowers</option>
+      <option value="manure">Manure</option>
+      <option value="services">Services</option>
+    </select>
+  </div>
+
+
+  <!--This product is a sample for the products and services page.-->
+
+  <!--You can add products to this by input it in. fill in the data-category field of the product in order to enable it in its category windows.-->
+  <section id="products">
+    <h2>Our Products</h2>
+    <div>
+      <div class="products"data-category="flowers">
+        <img src="demo photo.jpg" alt="">
+        <h3>Flower1</h3>
+        <p><b>GH&#8373 57</b></p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="products" data-category="flowers">
+        <img src="demo photo.jpg" alt="">
+        <h3>Flower2</h3>
+        <p><b>GH&#8373 4555</b></p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="products" data-category="vegetables">
+        <img src="demo photo.jpg" alt="">
+        <h3>Vegetable1</h3>
+        <p><b>GH&#8373 4555</b></p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="products" data-category="Manure">
+        <img src="demo photo.jpg" alt="">
+        <h3>Manure1</h3>
+        <p><b>GH&#8373 4555</b></p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="products" data-category="services">
+        <img src="demo photo.jpg" alt="">
+        <h3>Services1</h3>
+        <p><b>GH&#8373 4555</b></p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="products" data-category="services">
+        <img src="demo photo.jpg" alt="">
+        <h3>Services2</h3>
+        <p><b>GH&#8373 4555</b></p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="products" data-category="services">
+        <img src="demo photo.jpg" alt="">
+        <h3>Services3</h3>
+        <p><b>GH&#8373 4555</b></p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="products" data-category="manure">
+        <img src="demo photo.jpg" alt="">
+        <h3>Manure52</h3>
+        <p><b>GH&#8373 4555</b></p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="products" data-category="vegetables">
+        <img src="demo photo.jpg" alt="">
+        <h3>vegetable2
+        </h3>
+        <p><b>GH&#8373 4555</b></p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="products" data-category="manure">
+        <img src="demo photo.jpg" alt="">
+        <h3>Manure4</h3>
+        <p><b>GH&#8373 4555</b></p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="products" data-category="flower">
+        <img src="demo photo.jpg" alt="">
+        <h3>Flower3</h3>
+        <p><b>GH&#8373 4555</b></p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="products" data-category="flower">
+        <img src="demo photo.jpg" alt="">
+        <h3>Flower4</h3>
+        <p><b>GH&#8373 4555</b></p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="products" data-category="flowers">
+        <img src="demo photo.jpg" alt="">
+        <h3>flower6</h3>
+        <p><b>GH&#8373 4555</b></p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="products" data-category="vegetables">
+        <img src="demo photo.jpg" alt="">
+        <h3>vegetable5</h3>
+        <p><b>GH&#8373 4555</b></p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="products" data-category="vegetables">
+        <img src="demo photo.jpg" alt="">
+        <h3>vegetable4</h3>
+        <p><b>GH&#8373 4555</b></p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="products" data-category="vegetables">
+        <img src="demo photo.jpg" alt="">
+        <h3>vegetable3</h3>
+        <p><b>GH&#8373 4555</b></p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="products" data-category="flower">
+        <img src="demo photo.jpg" alt="">
+        <h3>flower5</h3>
+        <p><b>GH&#8373 4555</b></p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="products" data-category="services">
+        <img src="demo photo.jpg" alt="">
+        <h3>Service4</h3>
+        <p><b>GH&#8373 4555</b></p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="products" data-category="manure">
+        <img src="demo photo.jpg" alt="">
+        <h3>NPK</h3>
+        <p><b>GH&#8373 4555</b></p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+    
+      <div class="products" data-category="flower">
+        <img src="demo photo.jpg" alt="">
+        <h3>Alfafa</h3>
+        <p><b>GH&#8373 4555</b></p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+<section class="service-links">
+  <div>
+  <h2>Our Services</h2>
+  <nav class="service-nav">
+    <a href="vegetables.html">🥬 Vegetables</a>
+    <a href="#flowers">🌸 Flowers</a>
+    <a href="#manure">💩 Manure</a>
+    <a href="#landscaping">🌿 Landscaping</a>
+    <a href="#garden-maintenance">🧹 Garden Maintenance</a>
+  </nav>
+  </div>
+</section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Phone: 0599178586</p>
+    <p>Email: kwadwoasamoahyeboah@gmail.com</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Ashanko Farms. All rights reserved.</p>
+  </footer>
+
+<script>
+const searchInput = document.getElementById("searchInput");
+const priceInput = document.getElementById("priceInput");
+const categorySelect = document.getElementById("categorySelect");
+const productCards = document.querySelectorAll(".products");
+
+function filterProducts() {
+  const searchValue = searchInput.value.toLowerCase();
+  const maxPrice = parseFloat(priceInput.value);
+  const selectedCategory = categorySelect.value.toLowerCase();
+
+  productCards.forEach(card => {
+    const name = card.querySelector("h3").textContent.toLowerCase();
+    const priceText = card.querySelector("p").textContent.replace(/[^\d]/g, "");
+    const price = parseFloat(priceText);
+
+    // Category: use data-category attribute
+    const category = card.dataset.category ? card.dataset.category.toLowerCase() : "";
+
+    const matchName = name.includes(searchValue);
+    const matchPrice = isNaN(maxPrice) || price <= maxPrice;
+    const matchCategory = selectedCategory === "" || category === selectedCategory;
+
+    if (matchName && matchPrice && matchCategory) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
+
+// Listen to all filters
+searchInput.addEventListener("input", filterProducts);
+priceInput.addEventListener("input", filterProducts);
+categorySelect.addEventListener("change", filterProducts);
+</script>
+
+<script>
+  // Function to update cart count display
+  function updateCartCount() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let count = cart.reduce((total, item) => total + item.quantity, 0);
+    document.getElementById("cart-count").textContent = count;
+  }
+
+  // Run on page load
+  updateCartCount();
+
+  // Add event listeners to all Add to Cart buttons
+  document.querySelectorAll(".add-to-cart").forEach(btn => {
+    btn.addEventListener("click", function() {
+
+      // Get product info
+      let product = btn.parentElement;
+      let name = product.querySelector("h3").textContent.trim();
+      let priceText = product.querySelector("p b").textContent.replace("GH₵", "").trim();
+      let price = parseFloat(priceText);
+
+      // Get cart from localStorage
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      // Check if item already exists
+      let existing = cart.find(p => p.name === name);
+      if (existing) {
+        existing.quantity += 1;  // Increase quantity by 1
+      } else {
+        cart.push({ name: name, price: price, quantity: 1 });
+      }
+
+      // Save updated cart
+      localStorage.setItem("cart", JSON.stringify(cart));
+
+      // Update cart count immediately
+      updateCartCount();
+
+      //pop animation
+      // Animate cart button
+      const cartBtn = document.querySelector(".cart-btn");
+      cartBtn.classList.add("pop");
+      setTimeout(() => {
+        cartBtn.classList.remove("pop");
+      }, 300); // match animation duration
+
+
+      // Flying image animation
+      const productImg = product.querySelector("img");
+      const imgClone = productImg.cloneNode(true);
+      const rect = productImg.getBoundingClientRect();
+      const cartRect = cartBtn.getBoundingClientRect();
+
+      imgClone.classList.add("flying-img");
+      imgClone.style.top = rect.top + "px";
+      imgClone.style.left = rect.left + "px";
+      document.body.appendChild(imgClone);
+
+      // Force reflow for transition to work
+      imgClone.getBoundingClientRect();
+
+      // Move image to cart
+      imgClone.style.transform = `translate(${cartRect.left - rect.left}px, ${cartRect.top - rect.top}px) scale(0.2)`;
+      imgClone.style.opacity = "0";
+
+      // Remove image after animation
+      setTimeout(() => {
+        imgClone.remove();
+      }, 800);
+
+
+
+            // Optional alert
+            // alert(name + " added to cart!");
+          });
+        });
+</script>
+
+
+
+</body>
+
+</html>
