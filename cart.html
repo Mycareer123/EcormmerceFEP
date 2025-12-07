@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your Cart</title>
-
+  <link rel="stylesheet" href="main.css">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -161,6 +161,8 @@
       }
     });
 
+    
+
     document.getElementById("whatsapp-btn").addEventListener("click", () => {
       if (cart.length === 0) {
         alert("Cart is empty!");
@@ -180,7 +182,37 @@
     });
 
     displayCart();
-  </script>
+
+
+  document.getElementById("whatsapp-order").addEventListener("click", function() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  if(cart.length === 0) {
+    alert("Your cart is empty!");
+    return;
+  }
+
+  // Build the message
+  let message = "Hello, I would like to place an order:\n\n";
+  let total = 0;
+
+  cart.forEach(item => {
+    message += `${item.name} - Qty: ${item.quantity} - GHS ${item.price * item.quantity}\n`;
+    total += item.price * item.quantity;
+  });
+
+  message += `\nTotal: GHS ${total}`;
+
+  // Replace with your father's WhatsApp number (country code, no + or 0)
+  const adminNumber = "233509468114"; 
+
+  // Create WhatsApp link
+  const whatsappURL = `https://wa.me/${adminNumber}?text=${message}`;
+
+  // Open WhatsApp in a new tab
+  window.open(whatsappURL, "_blank");
+});
+</script>
 
 </body>
 </html>
