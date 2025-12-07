@@ -334,7 +334,7 @@ header {
 }
 
 .cart-btn {
-  position: fixed;
+  position: fixed; /* stay on screen while scrolling */
   top: 20px;
   right: 20px;
   background: #2e7d32;
@@ -343,12 +343,13 @@ header {
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
-  z-index: 1000;
+  z-index: 2000; /* always above page */
 }
 
 .cart-btn:hover {
   background: #1b5e20;
 }
+
 
 /* ---------------------------- */
 /* 📱 MEDIA QUERY FOR SMALL SCREENS */
@@ -377,5 +378,16 @@ header {
 
   nav ul li {
     margin: 10px 0;
+  }
+
+  .cart-btn {
+    top: 10px;
+    right: 10px;
+    padding: 7px 10px;
+    font-size: 14px;
+  }
+
+  header {
+    padding-top: 60px; /* create space so the button won't overlap header */
   }
 }
