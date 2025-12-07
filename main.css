@@ -334,7 +334,7 @@ header {
 }
 
 .cart-btn {
-  position: absolute;
+  position: fixed;
   top: 20px;
   right: 20px;
   background: #2e7d32;
