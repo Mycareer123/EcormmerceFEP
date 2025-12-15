@@ -90,6 +90,7 @@
       width: 100%;
     }
   </style>
+  <link rel="icon" type="image/png" href="Ashanko Farms icon.jpg">
 </head>
 <body>
 
@@ -103,87 +104,126 @@
 
   <button id="whatsapp-btn">Send Order to Admin</button>
 
-
   <script>
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    function displayCart() {
-      let container = document.getElementById("cart-items");
-      container.innerHTML = "";
+  function displayCart() {
+    let container = document.getElementById("cart-items");
+    container.innerHTML = "";
 
-      let total = 0;
+    let total = 0;
 
-      cart.forEach((item, index) => {
-        total += item.price * item.quantity;
+    cart.forEach((item, index) => {
+      total += item.price * item.quantity;
 
-        container.innerHTML += `
-          <div class="cart-item">
-            <div class="item-info">
-              <h3>${item.name}</h3>
-              <p>GH₵ ${item.price}</p>
-            </div>
-
-            <div class="quantity-controls">
-              <button onclick="changeQty(${index}, -1)">-</button>
-              <span>${item.quantity}</span>
-              <button onclick="changeQty(${index}, 1)">+</button>
-              <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
-            </div>
+      container.innerHTML += `
+        <div class="cart-item">
+          <div class="item-info">
+            <h3>${item.name}</h3>
+            <p>GH₵ ${item.price}</p>
           </div>
-        `;
-      });
 
-      document.getElementById("total").textContent = "Total: GH₵ " + total.toFixed(2);
-    }
-
-    function changeQty(index, amount) {
-      cart[index].quantity += amount;
-
-      if (cart[index].quantity < 1) {
-        cart[index].quantity = 1;
-      }
-
-      localStorage.setItem("cart", JSON.stringify(cart));
-      displayCart();
-    }
-
-    function removeItem(index) {
-      cart.splice(index, 1);
-      localStorage.setItem("cart", JSON.stringify(cart));
-      displayCart();
-    }
-
-    document.getElementById("clear-cart").addEventListener("click", () => {
-      if (confirm("Clear entire cart?")) {
-        cart = [];
-        localStorage.setItem("cart", JSON.stringify(cart));
-        displayCart();
-      }
+          <div class="quantity-controls">
+            <button onclick="changeQty(${index}, -1)">-</button>
+            <span>${item.quantity}</span>
+            <button onclick="changeQty(${index}, 1)">+</button>
+            <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+          </div>
+        </div>
+      `;
     });
 
-    
+    document.getElementById("total").textContent = "Total: GH₵ " + total.toFixed(2);
+  }
 
-    document.getElementById("whatsapp-btn").addEventListener("click", () => {
-      if (cart.length === 0) {
-        alert("Cart is empty!");
-        return;
-      }
+  function changeQty(index, amount) {
+    cart[index].quantity += amount;
 
-      let message = "Hello, here is my order:%0A%0A";
+    if (cart[index].quantity < 1) {
+      cart[index].quantity = 1;
+    }
 
-      cart.forEach(item => {
-        message += `• ${item.name} x${item.quantity} = GH₵ ${item.price * item.quantity}%0A`;
-      });
-
-      message += `%0ATotal: GH₵ ${cart.reduce((sum, item) => sum + item.price * item.quantity, 0)}`;
-
-      let adminNumber = "233509468114"; // <-- change to your father's WhatsApp number (Ghana format)
-      window.open(`https://wa.me/${adminNumber}?text=${message}`, "_blank");
-    });
-
+    localStorage.setItem("cart", JSON.stringify(cart));
     displayCart();
+  }
 
+  function removeItem(index) {
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    displayCart();
+  }
+
+  document.getElementById("clear-cart").addEventListener("click", () => {
+    if (confirm("Clear entire cart?")) {
+      cart = [];
+      localStorage.setItem("cart", JSON.stringify(cart));
+      displayCart();
+    }
+  });
+
+  // ============================
+  // SEND ORDER TO WHATSAPP
+  // ============================
+
+  document.getElementById("whatsapp-btn").addEventListener("click", () => {
+    if (cart.length === 0) {
+      alert("Your cart is empty.");
+      return;
+    }
+
+    let message = "ORDER DETAILS:%0A%0A";
+
+    let total = 0;
+
+    cart.forEach(item => {
+      let subtotal = item.price * item.quantity;
+      total += subtotal;
+
+      message += `• ${item.name}%0A  Qty: ${item.quantity}%0A  Price: GH₵${item.price}%0A  Subtotal: GH₵${subtotal}%0A%0A`;
+    });
+
+    message += `TOTAL COST: GH₵${total.toFixed(2)}%0A%0A`;
+
+    // Timestamp
+    let timestamp = new Date().toLocaleString();
+    message += `Order Time: ${timestamp}%0A%0A`;
+
+    // Fetch GPS location
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(position => {
+
+        let lat = position.coords.latitude;
+        let lon = position.coords.longitude;
+
+        let mapLink = `https://maps.google.com/?q=${lat},${lon}`;
+
+        message += `Customer Location:%0A${mapLink}%0A%0A`;
+
+        sendToWhatsApp(message);
+
+      }, () => {
+        // If location is denied
+        message += `Customer Location: Not provided%0A%0A`;
+        sendToWhatsApp(message);
+      });
+
+    } else {
+      // No GPS support
+      message += `Customer Location: Not supported%0A%0A`;
+      sendToWhatsApp(message);
+    }
+  });
+
+  function sendToWhatsApp(message) {
+    let adminNumber = "233509468114"; // Your father's WhatsApp number
+    let url = `https://wa.me/${adminNumber}?text=${message}`;
+    window.open(url, "_blank");
+  }
+
+  // Load cart on start
+  displayCart();
 </script>
+
 
 </body>
 </html>

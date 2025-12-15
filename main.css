@@ -107,6 +107,10 @@ section {
     padding-left: 50px;
 }
 
+.product-link{
+  text-decoration: none;
+  color: inherit;
+}
 #products h2{
     font-size: 30px;
     margin-bottom: 50px;
