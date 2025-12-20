@@ -38,13 +38,19 @@
     <input type="text" id="client-name" placeholder="Your Name" required>
     <input type="tel" id="client-phone" placeholder="Phone Number" required>
 
-    <select id="service-type" required>
-      <option value="">Select Service</option>
-      <option>Landscaping</option>
-      <option>Garden Maintenance</option>
-      <option>Lawn Setup</option>
-      <option>General Garden Work</option>
-    </select>
+    <div class="service-select">
+  <label for="service-type">Select a Service</label>
+
+  <select id="service-type" required>
+    <option value="" disabled selected>Choose a service</option>
+    <option value="Landscaping">Landscaping</option>
+    <option value="Garden Maintenance">Garden Maintenance</option>
+    <option value="Lawn Setup">Lawn Setup</option>
+    <option value="Flower Bed Design">Flower Bed Design</option>
+    <option value="General Garden Work">General Garden Work</option>
+  </select>
+</div>
+
 
     <textarea id="service-details" rows="5" placeholder="Describe the work you need" required></textarea>
 
