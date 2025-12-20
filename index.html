@@ -11,18 +11,33 @@
 </head>
 <body>
   <header>
-    <h1>ASHANKO FARMS</h1>
-    <nav>
-      <ul>
-        <li><a href="order.html" alt="List of available goods"></a></li>
-        <!-- Cart Button -->
-      <a href="cart.html" class="cart-btn">
-        🛒 Cart (<span id="cart-count">0</span>)
-      </a>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html">AshankoFarm</a>
+    </div>
 
-      </ul>
-    </nav>
-  </header> 
+    <!-- Hamburger Icon -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="services.html" class="service-btn">Request a Service</a></li>
+      <li>
+        <a href="cart.html" class="cart-link">
+          🛒 <span id="cart-count">0</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+ 
 
   <section id="hero">
     <div class="hero-div">
@@ -35,7 +50,16 @@
     <p>Ashanko Farms have been running for years aiming to bring organic(natural) products to the general public. At our farm and garden services company, we are dedicated to bringing nature closer to your home. <br><br>We grow and supply fresh, healthy vegetables, beautiful flowers, and high-quality organic manure for all types of gardens. <br>Beyond providing these products, we also offer expert landscaping and garden maintenance services to help transform any space into a vibrant, well-designed, and thriving environment. <br><br>With years of hands-on experience, we take pride in delivering reliable, affordable, and eco-friendly solutions for homes, businesses, and community spaces. <br><br>Whether you need plants, soil nutrients, or complete garden work, we are committed to helping you create and maintain the green space you’ve always imagined.
     </p>
   </section>
-  <!--This is the search bar for products-->
+ 
+
+
+  <!--This product is a sample for the products and services page.-->
+
+  <!--You can add products to this by input it in. fill in the data-category field of the product in order to enable it in its category windows.-->
+  <section id="products">
+    <h2>Our Products</h2>
+
+     <!--This is the search bar for products-->
   <div id="searchBox">
     <input type="text" id="searchInput" placeholder="Search products...">
     <input type="number" id="priceInput" placeholder="Max Price (GH₵)" min="0">
@@ -48,13 +72,7 @@
       <option value="services">Services</option>
     </select>
   </div>
-
-
-  <!--This product is a sample for the products and services page.-->
-
-  <!--You can add products to this by input it in. fill in the data-category field of the product in order to enable it in its category windows.-->
-  <section id="products">
-    <h2>Our Products</h2>
+  
     <div>
       <a href="product.html?id=1" class="product-link">
         <div class="products" data-id="1" data-category="flowers">
@@ -206,8 +224,35 @@
   </section>
 
   <section id="contact">
-    <h2>Contact Us</h2>
-  </section>
+  <h2>Contact Us</h2>
+
+  <div class="contact-container">
+
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <h3>Get in Touch</h3>
+      <p>We supply fresh vegetables, flowers, manure, and offer landscaping & garden maintenance services.</p>
+
+      <p><strong>Phone:</strong> <a href="tel:+233509468114">+233 50 946 8114</a></p>
+      <p><strong>WhatsApp:</strong> <a href="https://wa.me/233509468114" target="_blank">Chat on WhatsApp</a></p>
+      <p><strong>Service Area:</strong> Accra & surrounding areas</p>
+    </div>
+
+    <!-- Contact Form -->
+    <form class="contact-form" id="contactForm">
+      <h3>Send Us a Message</h3>
+
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="tel" id="phone" placeholder="Your Phone Number" required>
+      <textarea id="message" rows="5" placeholder="Make an Enquiry" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+
+    </div>
+</section>
+
 
   <footer>
     <p>&copy; 2025 Ashanko Farms. All rights reserved.</p>
@@ -329,7 +374,45 @@ categorySelect.addEventListener("change", filterProducts);
         });
 </script>
 
+<!--Contact section Java Script-->
+<script>
+  document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
 
+    let name = document.getElementById("name").value.trim();
+    let phone = document.getElementById("phone").value.trim();
+    let message = document.getElementById("message").value.trim();
+
+    let whatsappNumber = "233509468114";
+
+    let whatsappMessage =
+      `Hello, I would like to make an enquiry.%0A%0A` +
+      `Name: ${name}%0A` +
+      `Phone: ${phone}%0A` +
+      `Message: ${message}`;
+
+    let whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
+    window.open(whatsappURL, "_blank");
+  });
+</script>
+
+<!--Hamburger Script for index.html-->
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("nav-links");
+
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+
+  // Close menu when a link is clicked
+  document.querySelectorAll("#nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+    });
+  });
+</script>
 
 </body>
 
