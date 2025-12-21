@@ -737,3 +737,9 @@ header {
   border-color: #2e7d32;
   background-color: #ffffff;
 }
+
+.products > img{
+  width: 150px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
