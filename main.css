@@ -767,3 +767,43 @@ header {
 }
 
 
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Contact Info slides in from left */
+.contact-info {
+  flex: 1 1 300px;
+  background: #f3f7f3;
+  padding: 20px;
+  border-radius: 12px;
+  transform: translateX(-100px);
+  opacity: 0;
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+/* Form slides in from right */
+.contact-form {
+  flex: 1 1 300px;
+  background: #f3f7f3;
+  padding: 20px;
+  border-radius: 12px;
+  transform: translateX(100px);
+  opacity: 0;
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+/* When visible, slide into place */
+.contact-info.visible,
+.contact-form.visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.contact-info { transition-delay: 0.8s; }
+.contact-form { transition-delay: 1.6s; }
+

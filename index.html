@@ -332,6 +332,30 @@ categorySelect.addEventListener("change", filterProducts);
   });
 </script>
 
+<script>
+
+  // Select both boxes
+const contactBoxes = document.querySelectorAll(".contact-info, .contact-form");
+
+function checkContactVisible() {
+  const contactSection = document.getElementById("contact");
+  const rect = contactSection.getBoundingClientRect();
+  const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+  if (rect.top <= windowHeight - 100) {
+    contactBoxes.forEach(box => box.classList.add("visible"));
+  } else {
+    contactBoxes.forEach(box => box.classList.remove("visible")); // optional: animate out when scrolling up
+  }
+}
+
+// Listen to scroll
+window.addEventListener("scroll", checkContactVisible);
+
+// Run on page load
+checkContactVisible();
+
+</script>
 </body>
 
 </html>
