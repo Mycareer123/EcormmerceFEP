@@ -10,6 +10,14 @@
   <link rel="icon" type="image/png" href="Ashanko Farms icon.jpg">
 </head>
 <body>
+  <!-- Floating Cart Button -->
+   <a href="cart.html">
+    <button id="floatingCartBtn">
+    🛒 Cart (<span id="cart-Count">0</span>)
+    </button>
+   </a>
+  
+
   <header>
   <nav class="navbar">
     <div class="logo">
@@ -205,8 +213,15 @@ categorySelect.addEventListener("change", filterProducts);
     document.getElementById("cart-count").textContent = count;
   }
 
+  function updateCartCount1() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let count = cart.reduce((total, item) => total + item.quantity, 0);
+    document.getElementById("cart-Count").textContent = count;
+  }
+
   // Run on page load
   updateCartCount();
+  updateCartCount1();
 
   // Add event listeners to all Add to Cart buttons
   document.querySelectorAll(".add-to-cart").forEach(btn => {
@@ -235,6 +250,7 @@ categorySelect.addEventListener("change", filterProducts);
 
       // Update cart count immediately
       updateCartCount();
+      updateCartCount1();
 
       //pop animation
       // Animate cart button

@@ -743,3 +743,27 @@ header {
   aspect-ratio: 1/1;
   object-fit: cover;
 }
+
+
+/*Floating Cart Button Css*/
+#floatingCartBtn {
+  position: fixed;       /* Stays on screen while scrolling */
+  bottom: 20px;          /* Distance from bottom */
+  right: 20px;           /* Distance from right */
+  background: #2e7d32;   /* Green button */
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 15px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 1000;         /* Always on top */
+  transition: transform 0.2s ease;
+}
+
+#floatingCartBtn:hover {
+  transform: scale(1.1);
+}
+
+
