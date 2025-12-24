@@ -749,7 +749,7 @@ header {
 #floatingCartBtn {
   position: fixed;       /* Stays on screen while scrolling */
   bottom: 20px;          /* Distance from bottom */
-  right: 20px;           /* Distance from right */
+  left: 20px;           /* Distance from left */
   background: #2e7d32;   /* Green button */
   color: white;
   border: none;
