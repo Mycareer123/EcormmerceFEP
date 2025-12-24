@@ -749,12 +749,12 @@ header {
 #floatingCartBtn {
   position: fixed;       /* Stays on screen while scrolling */
   bottom: 20px;          /* Distance from bottom */
-  left: 20px;           /* Distance from left */
+  right: 20px;           /* Distance from right */
   background: #2e7d32;   /* Green button */
   color: white;
   border: none;
   border-radius: 50px;
-  padding: 15px 20px;
+  padding: 10px 15px;
   font-size: 18px;
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
@@ -807,3 +807,7 @@ header {
 .contact-info { transition-delay: 0.8s; }
 .contact-form { transition-delay: 1.6s; }
 
+
+#contact{
+  overflow-x: hidden;
+}
