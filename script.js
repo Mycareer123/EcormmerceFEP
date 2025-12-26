@@ -25,5 +25,3 @@ counter++;
 if (counter >= images.length) counter = 0;
 slide.style.transform = `translateX(${-counter * 100}%)`;
 }, 5000);
-
-

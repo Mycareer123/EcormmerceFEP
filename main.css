@@ -716,6 +716,7 @@ header {
   -moz-appearance: none;
 }
 
+
 /* Custom dropdown arrow */
 .service-select {
   position: relative;
@@ -797,6 +798,8 @@ header {
   transition: transform 0.8s ease, opacity 0.8s ease;
 }
 
+
+
 /* When visible, slide into place */
 .contact-info.visible,
 .contact-form.visible {
@@ -811,3 +814,5 @@ header {
 #contact{
   overflow-x: hidden;
 }
+
+
